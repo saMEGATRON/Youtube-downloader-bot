@@ -1,15 +1,16 @@
 import os
 import time
 import asyncio
-from pyrogram import Client, filters, enums
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-import yt_dlp
 
-# 📌 Fix Python Event Loop
+# 📌 Fix Python Event Loop (Must be placed BEFORE importing pyrogram)
 try:
     asyncio.get_event_loop()
 except RuntimeError:
     asyncio.set_event_loop(asyncio.new_event_loop())
+
+from pyrogram import Client, filters, enums
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+import yt_dlp
 
 # 📌 Your Telegram Credentials
 API_ID = 24593873
